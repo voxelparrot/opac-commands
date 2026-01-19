@@ -1,0 +1,39 @@
+{
+	"schemaVersion": 1,
+	"id": "opac-commands",
+	"version": "${version}",
+	"name": "OPAC commands",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"voxelparrot"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/opac-commands/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"dev.voxelparrot.opac_commands.OPACCommands"
+		],
+		"client": [
+			"dev.voxelparrot.opac_commands.OPACCommandsClient"
+		]
+	},
+	"mixins": [
+		"opac-commands.mixins.json",
+		{
+			"config": "opac-commands.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.18.4",
+		"minecraft": "~1.21.11",
+		"java": ">=21",
+		"fabric-api": "*",
+		"openpartiesandclaims": "*"
+	}
+}

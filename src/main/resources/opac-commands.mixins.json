@@ -1,0 +1,13 @@
+{
+	"required": true,
+	"package": "dev.voxelparrot.opac_commands.mixin",
+	"compatibilityLevel": "JAVA_21",
+	"mixins": [
+	],
+	"injectors": {
+		"defaultRequire": 1
+	},
+	"overwrites": {
+		"requireAnnotations": true
+	}
+}
