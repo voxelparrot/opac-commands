@@ -1,7 +1,6 @@
 package dev.voxelparrot.opac_commands.command;
 
 import com.mojang.brigadier.CommandDispatcher;
-import com.mojang.brigadier.arguments.StringArgumentType;
 import net.minecraft.server.command.CommandManager;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.text.Text;
@@ -47,7 +46,7 @@ public class AliasCommands {
 
         dispatcher.register(
                 CommandManager.literal("claim")
-                        .requires(src -> src.isExecutedByPlayer())
+                        .requires(ServerCommandSource::isExecutedByPlayer)
                         .executes(ctx -> {
                             var source = ctx.getSource();
                             var dispatcher2 = source.getServer()
@@ -61,7 +60,7 @@ public class AliasCommands {
 
         dispatcher.register(
                 CommandManager.literal("unclaim")
-                        .requires(src -> src.isExecutedByPlayer())
+                        .requires(ServerCommandSource::isExecutedByPlayer)
                         .executes(ctx -> {
                             var source = ctx.getSource();
                             var dispatcher2 = source.getServer()
